@@ -56,9 +56,7 @@ const Bio = () => {
       <p>
         會田忍法帖は <strong>{author}</strong> が書いています。
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          ツイッターで担々麺たべてますが。
-        </a>
+        <a href={`https://twitter.com/${social.twitter}`}>担々麺食べてます。</a>
       </p>
     </div>
   )
