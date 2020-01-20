@@ -6,23 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-import { createGlobalStyle } from "styled-components"
-
-const GlobalStyle = createGlobalStyle`
- *{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
- }
-
-  body {
-    color: #fff;
-    background: #21232D;
-  }
-  a {
-    color: #fff;
-  }
-`
+import { GlobalStyle, StyledBlogArticle } from "../styles"
 
 class BlogIndex extends React.Component {
   render() {
@@ -39,7 +23,7 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <article key={node.fields.slug}>
+              <StyledBlogArticle key={node.fields.slug}>
                 <header>
                   <h3
                     style={{
@@ -59,7 +43,7 @@ class BlogIndex extends React.Component {
                     }}
                   />
                 </section>
-              </article>
+              </StyledBlogArticle>
             )
           })}
         </Layout>

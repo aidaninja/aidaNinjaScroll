@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import { StyledCreditFooter } from "../styles"
 
 class Layout extends React.Component {
   render() {
@@ -62,11 +63,12 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <StyledCreditFooter>
+          <p>© {new Date().getFullYear()}, 會田忍法帖 All rights reserved.</p>
+          <p>
+            Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </p>
+        </StyledCreditFooter>
       </div>
     )
   }
