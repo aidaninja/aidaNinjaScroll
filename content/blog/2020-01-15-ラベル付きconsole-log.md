@@ -13,7 +13,7 @@ description: ラベル付きconsole.log
 
 ## 実現方法
 
-```
+```javascript
 console.log({foo})
 ```
 
