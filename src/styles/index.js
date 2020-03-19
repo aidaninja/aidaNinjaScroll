@@ -29,6 +29,9 @@ export const StyledBlogSection = styled.section`
 `
 export const StyledBlogArticle = styled.article`
   && {
+    a {
+      color: #eee;
+    }
     h3 {
       font-weight: 700;
     }
