@@ -3,7 +3,7 @@ title: styled-componentsでのスタイルの切り替え
 date: 2020-01-26T13:05:10.683Z
 description: ' styled components で動的にスタイルを切り替える方法。'
 ---
-## 概要
+##  概要
 
 styled components で動的にスタイルを切り替える方法。
 
