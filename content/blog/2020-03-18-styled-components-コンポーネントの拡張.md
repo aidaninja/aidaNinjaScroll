@@ -21,7 +21,7 @@ const Button = props => {
 }
 
 //スタイルを拡張したButtonを使用したいコンポーネント 
-const newComponent = props => {
+const NewComponent = props => {
     return <StyledButton>忍法</StyledButton>
 }
     
@@ -45,6 +45,8 @@ styleのpropsを指定しないといけません。
 //ベースになるコンポーネント
 const Button = props => {
     const {onClick, style ,children} = props
-    return <button style={style} onClicl={onClick}>{children}</button>
+    return <button style={style} onClick={onClick}>
+                  {children}
+               </button>
 }
 ```
