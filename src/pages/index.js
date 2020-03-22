@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
           <Bio />
-          {posts.map(({ node }) => {
+          {posts.map(({ node }, i) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <StyledBlogArticle key={node.fields.slug}>
@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
                     }}
                   >
                     <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
+                      {`${posts.length - i}. ${title}`}
                     </Link>
                   </h3>
                   <small>{node.frontmatter.date}</small>
