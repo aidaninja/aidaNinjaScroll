@@ -1,9 +1,9 @@
 ---
-title: styled-componentsでのスタイルの切り替え
+title: styled componentsでのスタイルの切り替え
 date: 2020-01-26T13:05:10.683Z
-description: styled-componentsでのスタイルの切り替え
+description: ' styled components で動的にスタイルを切り替える方法。'
 ---
-## 概要
+##  概要
 
 styled components で動的にスタイルを切り替える方法。
 
@@ -16,15 +16,15 @@ cssでクラスを複数指定して要素の見た目を切り替えるみた�
 ```
 ```css
 .button{
-    	padding: 5px 10px;
-    	font-size: 10px;
-    }
-    .red {
-    	color: red;
-    }
-    .blue {
-    	color: blue;
-    }
+    padding: 5px 10px;
+    font-size: 10px;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
 ```
 ## やりかた
 
