@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #fff;
     background: #21232D;
     border: 5px solid #000;
+    font-family: 'Monaco', '游ゴシック体', 'YuGothic', sans-serif;
   }
   a {
     color: #fff;
