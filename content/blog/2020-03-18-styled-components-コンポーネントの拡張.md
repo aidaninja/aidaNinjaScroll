@@ -36,7 +36,7 @@ const StyledButton =  styled(Button)`
 
 styled componentsでのコンポーネントの拡張はそもそも拡張したいコンポーネントに
 
-styleのpropsを指定しないといけません。
+classNameのpropsを指定しないといけません。
 
 なので指定しましょう。ドキュメント読みましょう。
 
@@ -44,8 +44,8 @@ styleのpropsを指定しないといけません。
 ```javascript
 //ベースになるコンポーネント
 const Button = props => {
-    const {onClick, style ,children} = props
-    return <button style={style} onClick={onClick}>
+    const {onClick, className ,children} = props
+    return <button className={style} onClick={onClick}>
                   {children}
                </button>
 }
