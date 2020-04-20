@@ -6,10 +6,9 @@
  */
 
 import React from "react"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
-import { rhythm } from "../utils/typography"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -34,32 +33,36 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <StyledBio>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
         imgStyle={{
           borderRadius: `50%`,
         }}
       />
-      <p>
+      <StyledBioText>
         會田忍法帖は <strong>{author}</strong> が書いています。
-        {` `}
+        <br />
         <a href={`https://twitter.com/${social.twitter}`}>担々麺食べてます。</a>
-      </p>
-    </div>
+      </StyledBioText>
+    </StyledBio>
   )
 }
 
 export default Bio
+
+const StyledBio = styled.div`
+  && {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+`
+const StyledBioText = styled.p`
+  && {
+    margin-top: 1rem;
+    text-align: center;
+  }
+`

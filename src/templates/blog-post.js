@@ -1,16 +1,11 @@
 import React from "react"
+import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 
-import {
-  GlobalStyle,
-  StyledBorderHeader,
-  StyledBlogSection,
-  StyledBorderFooter,
-} from "../styles"
+import { GlobalStyle, StyledBorderHeader, StyledBorderFooter } from "../styles"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -26,47 +21,22 @@ class BlogPostTemplate extends React.Component {
             title={post.frontmatter.title}
             description={post.frontmatter.description || post.excerpt}
           />
-          <article>
+
+          <StyledArticle>
             <StyledBorderHeader>
-              <h1
-                style={{
-                  marginTop: rhythm(1),
-                  marginBottom: 0,
-                }}
-              >
+              <StyledArticleHeader>
                 {post.frontmatter.title}
-              </h1>
-              <p
-                style={{
-                  ...scale(-1 / 5),
-                  display: `block`,
-                  marginBottom: rhythm(0.2),
-                }}
-              >
-                {post.frontmatter.date}
-              </p>
+              </StyledArticleHeader>
+              <StyledArticleDate>{post.frontmatter.date}</StyledArticleDate>
             </StyledBorderHeader>
             <StyledBlogSection
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <hr
-              style={{
-                marginBottom: rhythm(1),
-              }}
-            />
             <StyledBorderFooter />
-          </article>
+          </StyledArticle>
 
-          <nav>
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
+          <StyledNav>
+            <StyledNavContainer>
               <li>
                 {previous && (
                   <Link to={previous.fields.slug} rel="prev">
@@ -81,8 +51,8 @@ class BlogPostTemplate extends React.Component {
                   </Link>
                 )}
               </li>
-            </ul>
-          </nav>
+            </StyledNavContainer>
+          </StyledNav>
         </Layout>
       </>
     )
@@ -108,5 +78,75 @@ export const pageQuery = graphql`
         description
       }
     }
+  }
+`
+
+const StyledArticle = styled.article`
+  && {
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 76rem;
+    padding: 3rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.1rem 0.1rem rgba(10, 10, 10, 0.1),
+      0 0.1rem 0.2rem rgba(10, 10, 10, 0.1), 0 0 0.1rem rgba(10, 10, 10, 0.8);
+    border-radius: 0.3rem;
+  }
+`
+
+const StyledArticleHeader = styled.h1`
+  && {
+    font-size: 2.8rem;
+  }
+`
+const StyledArticleDate = styled.p`
+  && {
+    margin-top: 0.5rem;
+    color: #717171;
+  }
+`
+const StyledBlogSection = styled.section`
+  && {
+    margin-top: 3rem;
+    * {
+    }
+    h2 {
+      font-size: 2.4rem;
+      :not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+      font-size: 1.8rem;
+      :not(p + p) {
+        margin-top: 1rem;
+      }
+    }
+    li {
+      font-size: 1.6rem;
+    }
+    .gatsby-highlight {
+      font-size: 1.4rem;
+    }
+  }
+`
+
+const StyledNav = styled.nav`
+  && {
+  }
+`
+
+const StyledNavContainer = styled.ul`
+  && {
+    width: 100%;
+    max-width: 76rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
   }
 `
